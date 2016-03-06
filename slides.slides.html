@@ -279,7 +279,6 @@ a.anchor-link {
 <li>robobrowser (amélioration de mechanize)</li>
 <li>firebug/celui par défaut/de chrome</li>
 <li>ipython-beautifulsoup</li>
-<li>live http header</li>
 </ul>
 
 </div>
@@ -1236,6 +1235,7 @@ Content-Type: application/x-www-form-urlencoded
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="HTTP-:-requests">HTTP : requests<a class="anchor-link" href="#HTTP-:-requests">&#182;</a></h1><p>urllib2 est juste trop pourri et compliqué, requests a une super api en comparaison.</p>
+<p><a href="http://docs.python-requests.org">http://docs.python-requests.org</a></p>
 
 </div>
 </div>
@@ -1393,6 +1393,7 @@ Content-Type: application/x-www-form-urlencoded
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Robobrowser-:-stimulate-a-browser-behavior">Robobrowser : stimulate a browser behavior<a class="anchor-link" href="#Robobrowser-:-stimulate-a-browser-behavior">&#182;</a></h1><p>Comme mechanize mais avec requests et BeautifulSoup. Conserve les sessions et parser les liens pour vous.</p>
+<p><a href="https://github.com/jmcarp/robobrowser">https://github.com/jmcarp/robobrowser</a></p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">robobrowser</span> <span class="kn">import</span> <span class="n">RoboBrowser</span>
 
 <span class="n">browser</span> <span class="o">=</span> <span class="n">RoboBrowser</span><span class="p">(</span><span class="n">history</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -1435,6 +1436,1300 @@ Content-Type: application/x-www-form-urlencoded
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 <span class="c1"># &#39;{&quot;cookies&quot;: {&quot;sessioncookie&quot;: &quot;123456789&quot;}}&#39;</span>
 </pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Ipython-beautifulsoup">Ipython-beautifulsoup<a class="anchor-link" href="#Ipython-beautifulsoup">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Ipython-beautifulsoup">Ipython-beautifulsoup<a class="anchor-link" href="#Ipython-beautifulsoup">&#182;</a></h1><p>Pour les glandeurs et surtout car c'est plus facile. (spoiler: c'est moi qui l'ai codé)</p>
+<p><a href="https://github.com/Psycojoker/ipython-beautifulsoup">https://github.com/Psycojoker/ipython-beautifulsoup</a></p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> soup
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Monkey patch BeautifulSoup with custom rendering
+See &#96;configure_ipython_beautifulsoup?&#96; for configuration information
+Push &apos;BeautifulSoup&apos; from &apos;bs4&apos; into current context
+Push &apos;urlopen&apos; from &apos;urllib2&apos; into current context
+Push &apos;p&apos; shortcut into current context
+Push &apos;requests&apos; into current context
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">configure_ipython_beautifulsoup</span><span class="p">(</span><span class="n">show_html</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">show_css</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">show_js</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://neutrinet.be/index.php?title=Past_Events">http://neutrinet.be/index.php?title=Past_Events</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">p</span><span class="p">(</span><span class="s2">&quot;http://neutrinet.be/index.php?title=Past_Events&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;table&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[84]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table class="wikitable" style="width:100%;">
+<tr>
+<th style="background:black; color:white;"> Name
+</th>
+<th style="background:black; color:white;"> Date
+</th>
+<th style="background:black; color:white;"> Tags
+</th>
+<th style="background:black; color:white;"> Organizer
+</th>
+<th style="background:black; color:white;"> Location
+</th></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2016/03" title="Event:Meeting 2016/03">Meeting 2016/03</a> </td>
+<td> 25 February 2016 19:30:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Members_meeting_4" title="Event:Members meeting 4">Members meeting 4</a> </td>
+<td> 21 February 2016 14:00:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2016/02" title="Event:Meeting 2016/02">Meeting 2016/02</a> </td>
+<td> 11 February 2016 19:30:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Members_meeting_3" title="Event:Members meeting 3">Members meeting 3</a> </td>
+<td> 17 January 2016 14:00:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2016/01" title="Event:Meeting 2016/01">Meeting 2016/01</a> </td>
+<td> 14 January 2016 19:30:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Members_meeting_2" title="Event:Members meeting 2">Members meeting 2</a> </td>
+<td> 20 December 2015 14:00:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/15" title="Event:Meeting 2015/15">Meeting 2015/15</a> </td>
+<td> 3 December 2015 19:30:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/14" title="Event:Meeting 2015/14">Meeting 2015/14</a> </td>
+<td> 3 November 2015 19:30:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/13" title="Event:Meeting 2015/13">Meeting 2015/13</a> </td>
+<td> 22 October 2015 19:30:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Members_meetings" title="Event:Members meetings">Members meetings</a> </td>
+<td> 18 October 2015 13:02:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Neutrinet_au_caf%C3%A9_num%C3%A9rique_S07" title="Event:Neutrinet au café numérique S07">Neutrinet au café numérique S07</a> </td>
+<td> 7 October 2015 19:00:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Neutrinet_at_%22Le_Temp_des_Communs%22" title='Event:Neutrinet at "Le Temp des Communs"'>Neutrinet at "Le Temp des Communs"</a> </td>
+<td> 5 October 2015 20:00:00 </td>
+<td> </td>
+<td> bram </td>
+<td> World Trade Center I Boulevard du Roi Albert II 30 bte 5 B-1000 Bruxelles
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/12_(General_Assembly)" title="Event:Meeting 2015/12 (General Assembly)">Meeting 2015/12 (General Assembly)</a> </td>
+<td> 24 September 2015 19:30:00 </td>
+<td> </td>
+<td> bram </td>
+<td> World Trade Center, tower I, floor 25, 28-30 boulevard du roi Albert II, Bruxelles
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Stand_FFDN_(donc_dont_Neutrinet)_%C3%A0_la_Braderie_de_Lille" title="Event:Stand FFDN (donc dont Neutrinet) à la Braderie de Lille">Stand FFDN (donc dont Neutrinet) à la Braderie de Lille</a> </td>
+<td> 5 September 2015 13:00:00 </td>
+<td> </td>
+<td> bram </td>
+<td> Lille
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/11" title="Event:Meeting 2015/11">Meeting 2015/11</a> </td>
+<td> 20 August 2015 19:30:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/10" title="Event:Meeting 2015/10">Meeting 2015/10</a> </td>
+<td> 23 July 2015 19:30:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/09" title="Event:Meeting 2015/09">Meeting 2015/09</a> </td>
+<td> 8 July 2015 19:00:00 </td>
+<td> </td>
+<td> bram </td>
+<td> 123 rue royale 1000 Bruxelles Belgique
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Install_Party" title="Event:Install Party">Install Party</a> </td>
+<td> 2 July 2015 19:00:00 </td>
+<td> </td>
+<td> Bram </td>
+<td> 123 rue royale
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/08" title="Event:Meeting 2015/08">Meeting 2015/08</a> </td>
+<td> 18 June 2015 20:00:00 </td>
+<td> </td>
+<td> </td>
+<td> Rue du Canal 45, BXL
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/07" title="Event:Meeting 2015/07">Meeting 2015/07</a> </td>
+<td> 7 June 2015 14:00:00 </td>
+<td> </td>
+<td> Yvan </td>
+<td> Poissonnerie (Bruxelles)
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/06" title="Event:Meeting 2015/06">Meeting 2015/06</a> </td>
+<td> 21 May 2015 19:30:00 </td>
+<td> </td>
+<td> Bram </td>
+<td> F/LAT 45 rue du canal Bruxelles
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/05" title="Event:Meeting 2015/05">Meeting 2015/05</a> </td>
+<td> 16 April 2015 19:30:00 </td>
+<td> </td>
+<td> Bram </td>
+<td> F/LAT
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/04" title="Event:Meeting 2015/04">Meeting 2015/04</a> </td>
+<td> 2 April 2015 19:30:00 </td>
+<td> </td>
+<td> </td>
+<td> F/LAT
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/03" title="Event:Meeting 2015/03">Meeting 2015/03</a> </td>
+<td> 12 March 2015 00:00:00 </td>
+<td> </td>
+<td> </td>
+<td> F/LAT
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/02" title="Event:Meeting 2015/02">Meeting 2015/02</a> </td>
+<td> 5 February 2015 19:30:00 </td>
+<td> </td>
+<td> </td>
+<td> 45 rue du canal
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:FOSDEM_DIY-ISP_meetup" title="Event:FOSDEM DIY-ISP meetup">FOSDEM DIY-ISP meetup</a> </td>
+<td> 1 February 2015 16:00:00 </td>
+<td> </td>
+<td> </td>
+<td> Urlab, Avenue Buyl 131, 1050 Ixelles
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2015/01_--_Assembl%C3%A9e_G%C3%A9n%C3%A9rale" title="Event:Meeting 2015/01 -- Assemblée Générale">Meeting 2015/01 -- Assemblée Générale</a> </td>
+<td> 15 January 2015 19:30:00 </td>
+<td> </td>
+<td> </td>
+<td> 123 Rue Royale, BXL
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2014/18" title="Event:Meeting 2014/18">Meeting 2014/18</a> </td>
+<td> 17 December 2014 19:30:00 </td>
+<td> </td>
+<td> Bram </td>
+<td> 123 Rue Royale, BXL
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2014/17" title="Event:Meeting 2014/17">Meeting 2014/17</a> </td>
+<td> 10 December 2014 19:30:00 </td>
+<td> </td>
+<td> </td>
+<td> 123 Rue Royale, BXL
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2014/16" title="Event:Meeting 2014/16">Meeting 2014/16</a> </td>
+<td> 20 November 2014 19:30:00 </td>
+<td> </td>
+<td> Neutrinet </td>
+<td> 123 rue Royale - 1000 Bruxelles - 4eme étage local FEBUL
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2014/15" title="Event:Meeting 2014/15">Meeting 2014/15</a> </td>
+<td> 16 October 2014 19:30:00 </td>
+<td> </td>
+<td> Neutrinet </td>
+<td> 45 Rue du Canal, BXL
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2014/14" title="Event:Meeting 2014/14">Meeting 2014/14</a> </td>
+<td> 25 September 2014 19:30:00 </td>
+<td> </td>
+<td> Neutrinet </td>
+<td> 45 rue du Canal, 1000 BXL
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2014/13" title="Event:Meeting 2014/13">Meeting 2014/13</a> </td>
+<td> 29 August 2014 19:30:00 </td>
+<td> </td>
+<td> Neutrinet </td>
+<td> 123 Rue Royale, BXL
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2014/12" title="Event:Meeting 2014/12">Meeting 2014/12</a> </td>
+<td> 31 July 2014 19:30:00 </td>
+<td> </td>
+<td> Neutrinet </td>
+<td> 123 Rue Royale BXL
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2014/11" title="Event:Meeting 2014/11">Meeting 2014/11</a> </td>
+<td> 7 July 2014 19:30:00 </td>
+<td> </td>
+<td> </td>
+<td> 123 Rue Royale, BXL
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2014/5" title="Event:Meeting 2014/5">Meeting 2014/5</a> </td>
+<td> 13 March 2014 19:30:00 </td>
+<td> </td>
+<td> </td>
+<td> 123 Rue Royale, BXL
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2013/11" title="Event:Meeting 2013/11">Meeting 2013/11</a> </td>
+<td> 21 November 2013 18:00:00 </td>
+<td> <a href="/index.php?title=Special:SearchByProperty/Tags/AG" title="Special:SearchByProperty/Tags/AG">AG</a>, <a href="/index.php?title=Special:SearchByProperty/Tags/meeting" title="Special:SearchByProperty/Tags/meeting">meeting</a> </td>
+<td> </td>
+<td> 123 rue royale (Brussels)
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2013/10" title="Event:Meeting 2013/10">Meeting 2013/10</a> </td>
+<td> 7 November 2013 19:30:00 </td>
+<td> <a href="/index.php?title=Special:SearchByProperty/Tags/meeting" title="Special:SearchByProperty/Tags/meeting">meeting</a> </td>
+<td> </td>
+<td> 123 rue royale (Brussels)
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2013/8" title="Event:Meeting 2013/8">Meeting 2013/8</a> </td>
+<td> 10 October 2013 19:30:00 </td>
+<td> <a href="/index.php?title=Special:SearchByProperty/Tags/meeting" title="Special:SearchByProperty/Tags/meeting">meeting</a> </td>
+<td> </td>
+<td> UrLab
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2013/7" title="Event:Meeting 2013/7">Meeting 2013/7</a> </td>
+<td> 26 September 2013 19:30:00 </td>
+<td> <a href="/index.php?title=Special:SearchByProperty/Tags/meeting" title="Special:SearchByProperty/Tags/meeting">meeting</a> </td>
+<td> </td>
+<td> UrLab
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2013/4" title="Event:Meeting 2013/4">Meeting 2013/4</a> </td>
+<td> 15 August 2013 19:30:00 </td>
+<td> <a href="/index.php?title=Special:SearchByProperty/Tags/meeting" title="Special:SearchByProperty/Tags/meeting">meeting</a> </td>
+<td> </td>
+<td> 123 rue royale (Brussels)
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2013/3" title="Event:Meeting 2013/3">Meeting 2013/3</a> </td>
+<td> 8 August 2013 19:00:00 </td>
+<td> <a href="/index.php?title=Special:SearchByProperty/Tags/meeting" title="Special:SearchByProperty/Tags/meeting">meeting</a> </td>
+<td> </td>
+<td> HSBXL
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2013/2" title="Event:Meeting 2013/2">Meeting 2013/2</a> </td>
+<td> 25 July 2013 19:30:00 </td>
+<td> <a href="/index.php?title=Special:SearchByProperty/Tags/meeting" title="Special:SearchByProperty/Tags/meeting">meeting</a> </td>
+<td> </td>
+<td> Chez Toone
+</td></tr>
+<tr>
+<td><a href="/index.php?title=Event:Meeting_2013/1" title="Event:Meeting 2013/1">Meeting 2013/1</a> </td>
+<td> 18 July 2013 19:00:00 </td>
+<td> <a href="/index.php?title=Special:SearchByProperty/Tags/meeting" title="Special:SearchByProperty/Tags/meeting">meeting</a> </td>
+<td> </td>
+<td> UrLab
+</td></tr></table><hr/><div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>&lt;<span style="color: #008000; font-weight: bold">table</span> <span style="color: #7D9029">class</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;wikitable&quot;</span> <span style="color: #7D9029">style</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;width:100%;&quot;</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">th</span> <span style="color: #7D9029">style</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;background:black; color:white;&quot;</span>&gt;
+   Name
+  &lt;/<span style="color: #008000; font-weight: bold">th</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">th</span> <span style="color: #7D9029">style</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;background:black; color:white;&quot;</span>&gt;
+   Date
+  &lt;/<span style="color: #008000; font-weight: bold">th</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">th</span> <span style="color: #7D9029">style</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;background:black; color:white;&quot;</span>&gt;
+   Tags
+  &lt;/<span style="color: #008000; font-weight: bold">th</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">th</span> <span style="color: #7D9029">style</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;background:black; color:white;&quot;</span>&gt;
+   Organizer
+  &lt;/<span style="color: #008000; font-weight: bold">th</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">th</span> <span style="color: #7D9029">style</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;background:black; color:white;&quot;</span>&gt;
+   Location
+  &lt;/<span style="color: #008000; font-weight: bold">th</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2016/03&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2016/03&quot;</span>&gt;
+    Meeting 2016/03
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   25 February 2016 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Members_meeting_4&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Members meeting 4&quot;</span>&gt;
+    Members meeting 4
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   21 February 2016 14:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2016/02&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2016/02&quot;</span>&gt;
+    Meeting 2016/02
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   11 February 2016 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Members_meeting_3&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Members meeting 3&quot;</span>&gt;
+    Members meeting 3
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   17 January 2016 14:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2016/01&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2016/01&quot;</span>&gt;
+    Meeting 2016/01
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   14 January 2016 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Members_meeting_2&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Members meeting 2&quot;</span>&gt;
+    Members meeting 2
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   20 December 2015 14:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/15&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/15&quot;</span>&gt;
+    Meeting 2015/15
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   3 December 2015 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/14&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/14&quot;</span>&gt;
+    Meeting 2015/14
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   3 November 2015 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/13&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/13&quot;</span>&gt;
+    Meeting 2015/13
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   22 October 2015 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Members_meetings&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Members meetings&quot;</span>&gt;
+    Members meetings
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   18 October 2015 13:02:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Neutrinet_au_caf%C3%A9_num%C3%A9rique_S07&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Neutrinet au café numérique S07&quot;</span>&gt;
+    Neutrinet au café numérique S07
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   7 October 2015 19:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Neutrinet_at_%22Le_Temp_des_Communs%22&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&#39;Event:Neutrinet at &quot;Le Temp des Communs&quot;&#39;</span>&gt;
+    Neutrinet at &quot;Le Temp des Communs&quot;
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   5 October 2015 20:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   World Trade Center I Boulevard du Roi Albert II 30 bte 5 B-1000 Bruxelles
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/12_(General_Assembly)&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/12 (General Assembly)&quot;</span>&gt;
+    Meeting 2015/12 (General Assembly)
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   24 September 2015 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   World Trade Center, tower I, floor 25, 28-30 boulevard du roi Albert II, Bruxelles
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Stand_FFDN_(donc_dont_Neutrinet)_%C3%A0_la_Braderie_de_Lille&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Stand FFDN (donc dont Neutrinet) à la Braderie de Lille&quot;</span>&gt;
+    Stand FFDN (donc dont Neutrinet) à la Braderie de Lille
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   5 September 2015 13:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Lille
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/11&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/11&quot;</span>&gt;
+    Meeting 2015/11
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   20 August 2015 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/10&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/10&quot;</span>&gt;
+    Meeting 2015/10
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   23 July 2015 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/09&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/09&quot;</span>&gt;
+    Meeting 2015/09
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   8 July 2015 19:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale 1000 Bruxelles Belgique
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Install_Party&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Install Party&quot;</span>&gt;
+    Install Party
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   2 July 2015 19:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/08&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/08&quot;</span>&gt;
+    Meeting 2015/08
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   18 June 2015 20:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Rue du Canal 45, BXL
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/07&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/07&quot;</span>&gt;
+    Meeting 2015/07
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   7 June 2015 14:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Yvan
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Poissonnerie (Bruxelles)
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/06&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/06&quot;</span>&gt;
+    Meeting 2015/06
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   21 May 2015 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   F/LAT 45 rue du canal Bruxelles
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/05&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/05&quot;</span>&gt;
+    Meeting 2015/05
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   16 April 2015 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   F/LAT
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/04&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/04&quot;</span>&gt;
+    Meeting 2015/04
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   2 April 2015 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   F/LAT
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/03&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/03&quot;</span>&gt;
+    Meeting 2015/03
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   12 March 2015 00:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   F/LAT
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/02&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/02&quot;</span>&gt;
+    Meeting 2015/02
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   5 February 2015 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   45 rue du canal
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:FOSDEM_DIY-ISP_meetup&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:FOSDEM DIY-ISP meetup&quot;</span>&gt;
+    FOSDEM DIY-ISP meetup
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   1 February 2015 16:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Urlab, Avenue Buyl 131, 1050 Ixelles
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2015/01_--_Assembl%C3%A9e_G%C3%A9n%C3%A9rale&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2015/01 -- Assemblée Générale&quot;</span>&gt;
+    Meeting 2015/01 -- Assemblée Générale
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   15 January 2015 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 Rue Royale, BXL
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2014/18&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2014/18&quot;</span>&gt;
+    Meeting 2014/18
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   17 December 2014 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Bram
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 Rue Royale, BXL
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2014/17&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2014/17&quot;</span>&gt;
+    Meeting 2014/17
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   10 December 2014 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 Rue Royale, BXL
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2014/16&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2014/16&quot;</span>&gt;
+    Meeting 2014/16
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   20 November 2014 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Neutrinet
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue Royale - 1000 Bruxelles - 4eme étage local FEBUL
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2014/15&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2014/15&quot;</span>&gt;
+    Meeting 2014/15
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   16 October 2014 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Neutrinet
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   45 Rue du Canal, BXL
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2014/14&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2014/14&quot;</span>&gt;
+    Meeting 2014/14
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   25 September 2014 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Neutrinet
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   45 rue du Canal, 1000 BXL
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2014/13&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2014/13&quot;</span>&gt;
+    Meeting 2014/13
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   29 August 2014 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Neutrinet
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 Rue Royale, BXL
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2014/12&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2014/12&quot;</span>&gt;
+    Meeting 2014/12
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   31 July 2014 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Neutrinet
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 Rue Royale BXL
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2014/11&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2014/11&quot;</span>&gt;
+    Meeting 2014/11
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   7 July 2014 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 Rue Royale, BXL
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2014/5&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2014/5&quot;</span>&gt;
+    Meeting 2014/5
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   13 March 2014 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 Rue Royale, BXL
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2013/11&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2013/11&quot;</span>&gt;
+    Meeting 2013/11
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   21 November 2013 18:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Special:SearchByProperty/Tags/AG&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Special:SearchByProperty/Tags/AG&quot;</span>&gt;
+    AG
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+   ,
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Special:SearchByProperty/Tags/meeting&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Special:SearchByProperty/Tags/meeting&quot;</span>&gt;
+    meeting
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale (Brussels)
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2013/10&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2013/10&quot;</span>&gt;
+    Meeting 2013/10
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   7 November 2013 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Special:SearchByProperty/Tags/meeting&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Special:SearchByProperty/Tags/meeting&quot;</span>&gt;
+    meeting
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale (Brussels)
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2013/8&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2013/8&quot;</span>&gt;
+    Meeting 2013/8
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   10 October 2013 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Special:SearchByProperty/Tags/meeting&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Special:SearchByProperty/Tags/meeting&quot;</span>&gt;
+    meeting
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   UrLab
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2013/7&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2013/7&quot;</span>&gt;
+    Meeting 2013/7
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   26 September 2013 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Special:SearchByProperty/Tags/meeting&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Special:SearchByProperty/Tags/meeting&quot;</span>&gt;
+    meeting
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   UrLab
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2013/4&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2013/4&quot;</span>&gt;
+    Meeting 2013/4
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   15 August 2013 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Special:SearchByProperty/Tags/meeting&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Special:SearchByProperty/Tags/meeting&quot;</span>&gt;
+    meeting
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   123 rue royale (Brussels)
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2013/3&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2013/3&quot;</span>&gt;
+    Meeting 2013/3
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   8 August 2013 19:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Special:SearchByProperty/Tags/meeting&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Special:SearchByProperty/Tags/meeting&quot;</span>&gt;
+    meeting
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   HSBXL
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2013/2&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2013/2&quot;</span>&gt;
+    Meeting 2013/2
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   25 July 2013 19:30:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Special:SearchByProperty/Tags/meeting&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Special:SearchByProperty/Tags/meeting&quot;</span>&gt;
+    meeting
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   Chez Toone
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+ &lt;<span style="color: #008000; font-weight: bold">tr</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Event:Meeting_2013/1&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Event:Meeting 2013/1&quot;</span>&gt;
+    Meeting 2013/1
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   18 July 2013 19:00:00
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   &lt;<span style="color: #008000; font-weight: bold">a</span> <span style="color: #7D9029">href</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;/index.php?title=Special:SearchByProperty/Tags/meeting&quot;</span> <span style="color: #7D9029">title</span><span style="color: #666666">=</span><span style="color: #BA2121">&quot;Special:SearchByProperty/Tags/meeting&quot;</span>&gt;
+    meeting
+   &lt;/<span style="color: #008000; font-weight: bold">a</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+  &lt;<span style="color: #008000; font-weight: bold">td</span>&gt;
+   UrLab
+  &lt;/<span style="color: #008000; font-weight: bold">td</span>&gt;
+ &lt;/<span style="color: #008000; font-weight: bold">tr</span>&gt;
+&lt;/<span style="color: #008000; font-weight: bold">table</span>&gt;
+</pre></div>
+<hr/>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="ipbs.png" alt="ipbs.png"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Avant-de-finir,-quelques-pistes-pour-aller-plus-loin">Avant de finir, quelques pistes pour aller plus loin<a class="anchor-link" href="#Avant-de-finir,-quelques-pistes-pour-aller-plus-loin">&#182;</a></h1><ul>
+<li>Selenium : <a href="http://www.seleniumhq.org/">http://www.seleniumhq.org/</a></li>
+<li>asyncio pour les websockets</li>
+<li>asyncio pour dl comme un gros porc en parallèle</li>
+<li>multiprocessing.Pool.map pour le parallélisme du pauvre</li>
+<li>sortez pypy si vous avez besoin de perf</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="FAIM">FAIM<a class="anchor-link" href="#FAIM">&#182;</a></h1><p>Des questions ?</p>
 
 </div>
 </div>
