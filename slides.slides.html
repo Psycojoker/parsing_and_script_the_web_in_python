@@ -252,7 +252,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Comment-parser-et-script-le-web-en-python">Comment parser et script le web en python<a class="anchor-link" href="#Comment-parser-et-script-le-web-en-python">&#182;</a></h1>
+<h1 id="Comment-parser-et-scripter-le-web-en-python">Comment parser et scripter le web en python<a class="anchor-link" href="#Comment-parser-et-scripter-le-web-en-python">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
@@ -261,7 +261,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Comment-parser-et-script-le-web-en-python">Comment parser et script le web en python<a class="anchor-link" href="#Comment-parser-et-script-le-web-en-python">&#182;</a></h1><h4 id="Parser:-extraire-des-informations-d'une-source">Parser: extraire des informations d'une source<a class="anchor-link" href="#Parser:-extraire-des-informations-d'une-source">&#182;</a></h4><h4 id="Scripter:-automatiser-un-comportement">Scripter: automatiser un comportement<a class="anchor-link" href="#Scripter:-automatiser-un-comportement">&#182;</a></h4>
+<h1 id="Comment-parser-et-scripter-le-web-en-python">Comment parser et scripter le web en python<a class="anchor-link" href="#Comment-parser-et-scripter-le-web-en-python">&#182;</a></h1><h4 id="Parser:-extraire-des-informations-d'une-source">Parser: extraire des informations d'une source<a class="anchor-link" href="#Parser:-extraire-des-informations-d'une-source">&#182;</a></h4><h4 id="Scripter:-automatiser-un-comportement">Scripter: automatiser un comportement<a class="anchor-link" href="#Scripter:-automatiser-un-comportement">&#182;</a></h4>
 </div>
 </div>
 </div></section><section>
@@ -292,6 +292,15 @@ a.anchor-link {
 <h1 id="Le-web:-HTTP-+-HTML">Le web: HTTP + HTML<a class="anchor-link" href="#Le-web:-HTTP-+-HTML">&#182;</a></h1>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="HTML">HTML<a class="anchor-link" href="#HTML">&#182;</a></h1>
+</div>
+</div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -301,7 +310,7 @@ a.anchor-link {
 <h1 id="HTML">HTML<a class="anchor-link" href="#HTML">&#182;</a></h1>
 </div>
 </div>
-</div><div class="fragment">
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -313,7 +322,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -401,11 +410,11 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="HTTP-:-Exemple-d'&#233;change">HTTP : Exemple d'&#233;change<a class="anchor-link" href="#HTTP-:-Exemple-d'&#233;change">&#182;</a></h1><p>Client :</p>
-
-<pre><code>GET / HTTP/1.1
+<div class="highlight"><pre><span></span>GET / HTTP/1.1
 User-Agent: curl/7.35.0
 Host: 0.0.0.0:5000
-Accept: */*</code></pre>
+Accept: */*
+</pre></div>
 <p>Serveur :</p>
 <div class="highlight"><pre><span></span>HTTP/1.0 200 OK
 Server: SimpleHTTP/0.6 Python/2.7.6
@@ -439,25 +448,25 @@ Content-Length: 450
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="HTTP:-d&#233;mo-avec-nc-(netcat)">HTTP: d&#233;mo avec nc (netcat)<a class="anchor-link" href="#HTTP:-d&#233;mo-avec-nc-(netcat)">&#182;</a></h1><div class="highlight"><pre><span></span>psycojoker@dolgoff ~ nc -l 5000
+<h1 id="HTTP:-d&#233;mo-avec-nc-(netcat)">HTTP: d&#233;mo avec nc (netcat)<a class="anchor-link" href="#HTTP:-d&#233;mo-avec-nc-(netcat)">&#182;</a></h1><div class="highlight"><pre><span></span>$ ~ nc -l 5000
 GET / HTTP/1.1
 Host: localhost:5000
 Connection: keep-alive
-Cache-Control: max-age=0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Cache-Control: max-age<span class="o">=</span>0
+Accept: text/html,application/xhtml+xml,application/xml<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.9,image/webp,*/*<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8
 Upgrade-Insecure-Requests: 1
-User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/48.0.2564.82 Chrome/48.0.2564.82 Safari/537.36
+User-Agent: Mozilla/5.0 <span class="o">(</span>X11<span class="p">;</span> Linux x86_64<span class="o">)</span> AppleWebKit/537.36 <span class="o">(</span>KHTML, like Gecko<span class="o">)</span> Ubuntu Chromium/48.0.2564.82 Chrome/48.0.2564.82 Safari/537.36
 Accept-Encoding: gzip, deflate, sdch
-Accept-Language: fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4
-Cookie: csrftoken=PDY9ZJdnPufZJebI3cGrWEi3JeczTlJw
+Accept-Language: fr-FR,fr<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.8,en-US<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.6,en<span class="p">;</span><span class="nv">q</span><span class="o">=</span>0.4
+Cookie: <span class="nv">csrftoken</span><span class="o">=</span>PDY9ZJdnPufZJebI3cGrWEi3JeczTlJw
 
-HTTP/1.0 200 OK
+HTTP/1.0 <span class="m">200</span> OK
 Server: SimpleHTTP/0.6 Python/2.7.6
-Date: Sun, 06 Mar 2016 18:35:04 GMT
-Content-type: text/html; charset=UTF-8
+Date: Sun, <span class="m">06</span> Mar <span class="m">2016</span> 18:35:04 GMT
+Content-type: text/html<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>UTF-8
 Content-Length: 450
 
-<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Salut toi!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+&lt;p&gt;Salut toi!&lt;/p&gt;
 </pre></div>
 
 </div>
